@@ -1,0 +1,476 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "Ngj8Column",
+            "id": "interface-Ngj8Column-9f5481dee9f09c91daf180543dc412eff9f56b9d0b65149236c81cded3f4fde50fcabf89fb5dcf5b252cd2e9f1ce2fb03c49009340630de3156a3d49b055c7a8",
+            "file": "projects/ngj8-ui/src/lib/ngj8-table/ngj8-column.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Ngj8Column {\r\n    key: string;\r\n    header: string;\r\n}",
+            "properties": [
+                {
+                    "name": "header",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "key",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "User",
+            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
+            "file": "stories/User.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": []
+        }
+    ],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "Ngj8ButtonComponent",
+            "id": "component-Ngj8ButtonComponent-deb893a79da302a941148ca17270194cc1f523d3a0a726a66221392b3a861710c12737072df2ac04a86ca0f260ffb02c560b0b595249e0793fd81e4f5a9f8ce7",
+            "file": "projects/ngj8-ui/src/lib/ngj8-button/ngj8-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ngj8-button",
+            "styleUrls": [
+                "./ngj8-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./ngj8-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'ngj8-button',\n  templateUrl: './ngj8-button.component.html',\n  styleUrls: ['./ngj8-button.component.scss']\n})\nexport class Ngj8ButtonComponent implements OnInit {\n\n  @Input() label: string = '';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./ngj8-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button>{{label}}</button>"
+        },
+        {
+            "name": "Ngj8TableComponent",
+            "id": "component-Ngj8TableComponent-c15dacc39ed8d6f88ac8bff587a7e5922177b2115f10fadb10c9ae6acd89fbd4df990431108418c8c2028b83d89bb97c0a678df26dd58f38f1550a218b132a60",
+            "file": "projects/ngj8-ui/src/lib/ngj8-table/ngj8-table.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ngj8-table",
+            "styleUrls": [
+                "./ngj8-table.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./ngj8-table.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "columns",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "Ngj8Column[]",
+                    "decorators": []
+                },
+                {
+                    "name": "data",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "any[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { Ngj8Column } from './ngj8-column.model';\n\n@Component({\n  selector: 'ngj8-table',\n  templateUrl: './ngj8-table.component.html',\n  styleUrls: ['./ngj8-table.component.scss']\n})\nexport class Ngj8TableComponent implements OnInit {\n\n  @Input() columns: Ngj8Column[] = [];\n\n  @Input() data: any[] = [];\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./ngj8-table.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<table>\n    <thead>\n        <tr>\n            <th *ngFor=\"let column of columns\">\n                {{column.header}}\n            </th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let datum of data\">\n            <td *ngFor=\"let column of columns\">\n                {{datum[column.key]}}\n            </td>\n        </tr>\n    </tbody>\n</table>"
+        }
+    ],
+    "modules": [
+        {
+            "name": "Ngj8ButtonModule",
+            "id": "module-Ngj8ButtonModule-f0cf8d46b7edc1e6452de9477329f934c40834c0af2d184525b764c8c66e4fa375c85d4ece6ff4efddd78a3591febfaa49b3732257e65cde2608513b9167e75e",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngj8-ui/src/lib/ngj8-button/ngj8-button.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { Ngj8ButtonComponent } from './ngj8-button.component';\n\n\n\n@NgModule({\n  declarations: [\n    Ngj8ButtonComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [\n    Ngj8ButtonComponent\n  ]\n})\nexport class Ngj8ButtonModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "Ngj8ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "Ngj8ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "Ngj8TableModule",
+            "id": "module-Ngj8TableModule-34b38dcd21b30dd1e256f60e6b5c5ea92f425b47612977e37aaea102f8c8a73bdb6aced59a7a9ef835a118d5af09bf5325fc245fcac414c97d2a60293c6d0ba9",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ngj8-ui/src/lib/ngj8-table/ngj8-table.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { Ngj8TableComponent } from './ngj8-table.component';\n\n\n\n@NgModule({\n  declarations: [\n    Ngj8TableComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [\n    Ngj8TableComponent\n  ]\n})\nexport class Ngj8TableModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "Ngj8TableComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "Ngj8TableComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngj8-ui/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/ngj8table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngj8-ui/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/ngj8table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Ngj8TableComponent>",
+                "defaultValue": "(args: Ngj8TableComponent) => ({\r\n    props: args,\r\n  })"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/ngj8-ui/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngj8-ui/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngj8-ui/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "stories/ngj8table.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ngj8table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ngj8table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Ngj8TableComponent>",
+                    "defaultValue": "(args: Ngj8TableComponent) => ({\r\n    props: args,\r\n  })"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/ngj8-ui/src/lib/ngj8-button/ngj8-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Ngj8ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngj8-ui/src/lib/ngj8-table/ngj8-column.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Ngj8Column",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngj8-ui/src/lib/ngj8-table/ngj8-table.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Ngj8TableComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngj8-ui/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngj8-ui/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/User.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/ngj8table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/ngj8table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

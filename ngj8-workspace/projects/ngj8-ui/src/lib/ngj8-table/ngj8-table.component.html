@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>
+            <th *ngFor="let column of columns">
+                {{column.header}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let datum of data">
+            <td *ngFor="let column of columns">
+                {{datum[column.key]}}
+            </td>
+        </tr>
+    </tbody>
+</table>
