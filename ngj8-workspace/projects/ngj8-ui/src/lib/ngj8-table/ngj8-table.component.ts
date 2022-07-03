@@ -8,7 +8,7 @@ import { Ngj8Column } from './ngj8-column.model';
 })
 export class Ngj8TableComponent implements OnInit {
 
-  @Input() columns: Ngj8Column[] = [];
+  @Input() columns: ReadonlyArray<any> = [];
 
   @Input() data: any[] = [];
 
