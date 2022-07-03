@@ -187,7 +187,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "table {\r\n    tr {\r\n        th {\r\n            background-color: green;\r\n            color: white;\r\n            padding: 5px;\r\n        }\r\n        td {\r\n            background-color: yellowgreen;\r\n            color: black;\r\n            padding: 5px;\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./ngj8-table.component.scss"
                 }
             ],

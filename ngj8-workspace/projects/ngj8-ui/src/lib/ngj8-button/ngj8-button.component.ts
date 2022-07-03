@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'ngj8-button',
@@ -7,11 +7,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class Ngj8ButtonComponent implements OnInit {
 
-  @Input() label: string = '';
+  @Input() label: string = 'Button';
 
+  @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
+
+  clicked: true | false = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  click() {
+    this.onClick.emit(true);
+    this.clicked = true;
   }
 
 }
