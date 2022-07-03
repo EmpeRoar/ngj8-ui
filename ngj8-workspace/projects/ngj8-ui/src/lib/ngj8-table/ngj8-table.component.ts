@@ -10,7 +10,7 @@ export class Ngj8TableComponent implements OnInit {
 
   @Input() columns: ReadonlyArray<any> = [];
 
-  @Input() data: any[] = [];
+  @Input() data: ReadonlyArray<any> = [];
 
   constructor() { }
 
