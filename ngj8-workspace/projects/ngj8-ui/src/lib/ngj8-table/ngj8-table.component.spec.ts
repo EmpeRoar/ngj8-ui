@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Ngj8UiComponent } from './ngj8-ui.component';
+import { Ngj8TableComponent } from './ngj8-table.component';
 
-describe('Ngj8UiComponent', () => {
-  let component: Ngj8UiComponent;
-  let fixture: ComponentFixture<Ngj8UiComponent>;
+describe('Ngj8TableComponent', () => {
+  let component: Ngj8TableComponent;
+  let fixture: ComponentFixture<Ngj8TableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Ngj8UiComponent ]
+      declarations: [ Ngj8TableComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Ngj8UiComponent);
+    fixture = TestBed.createComponent(Ngj8TableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
