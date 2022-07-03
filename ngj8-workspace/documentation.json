@@ -54,7 +54,7 @@
     "components": [
         {
             "name": "Ngj8ButtonComponent",
-            "id": "component-Ngj8ButtonComponent-deb893a79da302a941148ca17270194cc1f523d3a0a726a66221392b3a861710c12737072df2ac04a86ca0f260ffb02c560b0b595249e0793fd81e4f5a9f8ce7",
+            "id": "component-Ngj8ButtonComponent-0b655d903ff51ffcac257fad88b7ea6ac7a794604c7e16bc8484692cca0d178f54670a0690c1518c911a73cc29357dd9091b4918a0acb1fa653e7b25aacf2597",
             "file": "projects/ngj8-ui/src/lib/ngj8-button/ngj8-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -73,7 +73,7 @@
             "inputsClass": [
                 {
                     "name": "label",
-                    "defaultValue": "''",
+                    "defaultValue": "'Button'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 10,
@@ -81,16 +81,46 @@
                     "decorators": []
                 }
             ],
-            "outputsClass": [],
-            "propertiesClass": [],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "clicked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": " | ",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
             "methodsClass": [
+                {
+                    "name": "click",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
                 {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14,
+                    "line": 17,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -102,11 +132,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'ngj8-button',\n  templateUrl: './ngj8-button.component.html',\n  styleUrls: ['./ngj8-button.component.scss']\n})\nexport class Ngj8ButtonComponent implements OnInit {\n\n  @Input() label: string = '';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ngj8-button',\r\n  templateUrl: './ngj8-button.component.html',\r\n  styleUrls: ['./ngj8-button.component.scss']\r\n})\r\nexport class Ngj8ButtonComponent implements OnInit {\r\n\r\n  @Input() label: string = 'Button';\r\n\r\n  @Output() onClick: EventEmitter<any> = new EventEmitter<any>();\r\n\r\n  clicked: true | false = false;\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  click() {\r\n    this.onClick.emit(true);\r\n    this.clicked = true;\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".ngj8-btn {\r\n    background-color: green;\r\n    color: white;\r\n    border: 0px;\r\n    padding: 5px 10px 5px 10px;\r\n    cursor: pointer;\r\n    border-radius: 5px;\r\n    \r\n}\r\n.clicked {\r\n    background-color: orangered;\r\n}",
                     "styleUrl": "./ngj8-button.component.scss"
                 }
             ],
@@ -117,16 +147,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 10
+                "line": 14
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button>{{label}}</button>"
+            "templateData": "<button \r\n[ngClass]=\"{'clicked': clicked }\"\r\nclass=\"ngj8-btn\" \r\n(click)=\"click()\">{{label}}</button>"
         },
         {
             "name": "Ngj8TableComponent",
-            "id": "component-Ngj8TableComponent-c15dacc39ed8d6f88ac8bff587a7e5922177b2115f10fadb10c9ae6acd89fbd4df990431108418c8c2028b83d89bb97c0a678df26dd58f38f1550a218b132a60",
+            "id": "component-Ngj8TableComponent-4518f59c8b2d1e801d29ec34e8bf547b39dab803665bbe9b7bd0e23088cfd0165febd0d8492164fb4ad9a78592b4ca4b1ad096f06b66fcabab57934b747c5424",
             "file": "projects/ngj8-ui/src/lib/ngj8-table/ngj8-table.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -149,7 +179,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
-                    "type": "Ngj8Column[]",
+                    "type": "ReadonlyArray<any>",
                     "decorators": []
                 },
                 {
@@ -158,7 +188,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 13,
-                    "type": "any[]",
+                    "type": "ReadonlyArray<any>",
                     "decorators": []
                 }
             ],
@@ -183,11 +213,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { Ngj8Column } from './ngj8-column.model';\n\n@Component({\n  selector: 'ngj8-table',\n  templateUrl: './ngj8-table.component.html',\n  styleUrls: ['./ngj8-table.component.scss']\n})\nexport class Ngj8TableComponent implements OnInit {\n\n  @Input() columns: Ngj8Column[] = [];\n\n  @Input() data: any[] = [];\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\nimport { Ngj8Column } from './ngj8-column.model';\r\n\r\n@Component({\r\n  selector: 'ngj8-table',\r\n  templateUrl: './ngj8-table.component.html',\r\n  styleUrls: ['./ngj8-table.component.scss']\r\n})\r\nexport class Ngj8TableComponent implements OnInit {\r\n\r\n  @Input() columns: ReadonlyArray<any> = [];\r\n\r\n  @Input() data: ReadonlyArray<any> = [];\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "table {\r\n    tr {\r\n        th {\r\n            background-color: green;\r\n            color: white;\r\n            padding: 5px;\r\n        }\r\n        td {\r\n            background-color: yellowgreen;\r\n            color: black;\r\n            padding: 5px;\r\n        }\r\n    }\r\n}",
+                    "data": "@import \"node_modules/bootstrap/scss/bootstrap\";\r\ntable {\r\n    tr {\r\n        th {\r\n            background-color: green;\r\n            color: white;\r\n            padding: 5px;\r\n        }\r\n        td {\r\n            background-color: yellowgreen;\r\n            color: black;\r\n            padding: 5px;\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./ngj8-table.component.scss"
                 }
             ],
@@ -203,19 +233,19 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<table>\n    <thead>\n        <tr>\n            <th *ngFor=\"let column of columns\">\n                {{column.header}}\n            </th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let datum of data\">\n            <td *ngFor=\"let column of columns\">\n                {{datum[column.key]}}\n            </td>\n        </tr>\n    </tbody>\n</table>"
+            "templateData": "<table>\r\n    <thead>\r\n        <tr>\r\n            <th *ngFor=\"let column of columns\">\r\n                {{column.header}}\r\n            </th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let datum of data\">\r\n            <td *ngFor=\"let column of columns\">\r\n                {{datum[column.key]}}\r\n            </td>\r\n        </tr>\r\n    </tbody>\r\n</table>"
         }
     ],
     "modules": [
         {
             "name": "Ngj8ButtonModule",
-            "id": "module-Ngj8ButtonModule-f0cf8d46b7edc1e6452de9477329f934c40834c0af2d184525b764c8c66e4fa375c85d4ece6ff4efddd78a3591febfaa49b3732257e65cde2608513b9167e75e",
+            "id": "module-Ngj8ButtonModule-93092521b28aa17147ba54bbbaa5d6e2653efd19fc451ee6979ff2ffbb99d496162a6e956233f98d7b52487f6e7837508fb3706356732522beb78d9531f6bba5",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngj8-ui/src/lib/ngj8-button/ngj8-button.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { Ngj8ButtonComponent } from './ngj8-button.component';\n\n\n\n@NgModule({\n  declarations: [\n    Ngj8ButtonComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [\n    Ngj8ButtonComponent\n  ]\n})\nexport class Ngj8ButtonModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { Ngj8ButtonComponent } from './ngj8-button.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    Ngj8ButtonComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [\r\n    Ngj8ButtonComponent\r\n  ]\r\n})\r\nexport class Ngj8ButtonModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -253,13 +283,13 @@
         },
         {
             "name": "Ngj8TableModule",
-            "id": "module-Ngj8TableModule-34b38dcd21b30dd1e256f60e6b5c5ea92f425b47612977e37aaea102f8c8a73bdb6aced59a7a9ef835a118d5af09bf5325fc245fcac414c97d2a60293c6d0ba9",
+            "id": "module-Ngj8TableModule-a16a566f34ee309cdafa7174e5b45be71edc391fd38797ad49087c20b4b6010ca10391bc1e3e917b91f1cea18bcfd9db02ebe5588e1bf8d5ffa388bc634c9b4b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ngj8-ui/src/lib/ngj8-table/ngj8-table.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { Ngj8TableComponent } from './ngj8-table.component';\n\n\n\n@NgModule({\n  declarations: [\n    Ngj8TableComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [\n    Ngj8TableComponent\n  ]\n})\nexport class Ngj8TableModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { Ngj8TableComponent } from './ngj8-table.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    Ngj8TableComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [\r\n    Ngj8TableComponent\r\n  ]\r\n})\r\nexport class Ngj8TableModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -299,6 +329,26 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/ngj8button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n    click: action('click')\r\n  }"
+            },
+            {
+                "name": "Clicked",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/ngj8button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -307,6 +357,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/ngj8button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Default",
@@ -331,6 +391,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/ngj8button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Ngj8ButtonComponent>",
+                "defaultValue": "(args: Ngj8ButtonComponent) => ({\r\n    props: {\r\n        ...args,\r\n        click: actionsData.click,\r\n    }\r\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/ngj8table.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -342,6 +412,48 @@
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "stories/ngj8button.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ngj8button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n    click: action('click')\r\n  }"
+                },
+                {
+                    "name": "Clicked",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ngj8button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ngj8button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ngj8button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Ngj8ButtonComponent>",
+                    "defaultValue": "(args: Ngj8ButtonComponent) => ({\r\n    props: {\r\n        ...args,\r\n        click: actionsData.click,\r\n    }\r\n  })"
+                }
+            ],
             "projects/ngj8-ui/src/test.ts": [
                 {
                     "name": "context",
@@ -401,7 +513,7 @@
                 "linktype": "component",
                 "name": "Ngj8ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -447,6 +559,46 @@
                 "type": "interface",
                 "linktype": "interface",
                 "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/ngj8button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/ngj8button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Clicked",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/ngj8button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/ngj8button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
